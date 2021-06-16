@@ -73,5 +73,22 @@ Parts of the code have been modified or replaced in order to handle the new chan
 
 ## Remarks
 
+### Qt.py doesn't replace Qt
+Qt and one of the Python bindings need to be installed on the system, and accessible from the Python session.
+
+In Maya: Qt and its PySide bindings are included in the installation, hence don't need to be installed separately.
+
+### Python version
 The project is written in Python 2 (aimed and tested in Python 2.7).
 It might need some small changes in order to work in Python 3.
+
+### Known bugs/issues
+
+* *TitleFrame* colour:<br>
+The background colour of the TitleFrame is set to the colour of a button (QPalette.Button).<br>
+However, the obtained colour seems to be the same as the window background colour (QPalette.Window).
+This problem seems to happen only in a Python standalone application (not inside a Maya session).
+To counter this issue, if the colours from the window background and the button are the same, a border is added around the TitleFrame.<br>
+This is definitely not ideal, but is a temporary "fix".
+
+If any other bugs are encountered, please let me know by either opening an issue or contacting me directly.

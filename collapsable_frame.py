@@ -76,11 +76,30 @@ class CollapsableFrame(QWidget):
             QFrame.__init__(self, parent=parent)
 
             self.setMinimumHeight(20)
-            background = self.palette().color(QPalette.Button)
-            self.setStyleSheet((
+            self.setMaximumHeight(20)
+            background_color = self.palette().color(QPalette.Button)
+            style = (
                 "background: rgb({}, {}, {});"
                 "border-radius: 2px;"
-            ).format(background.red(), background.green(), background.blue()))
+            ).format(
+                background_color.red(),
+                background_color.green(),
+                background_color.blue()
+            )
+            # ~Hack to add borders to the TitleFrame if it has the same color
+            #  as the window background
+            # ('QPalette.Button' doesn't return the expected button color)
+            #TODO(2-REC): fix issue
+            if background_color == self.palette().color(QPalette.Window):
+                text_color = self.palette().color(QPalette.ButtonText)
+                style += (
+                    "border: 1px solid rgb({}, {}, {});"
+                ).format(
+                    text_color.red(),
+                    text_color.green(),
+                    text_color.blue()
+                )
+            self.setStyleSheet(style)
 
 
             title_layout = QHBoxLayout(self)
@@ -99,7 +118,7 @@ class CollapsableFrame(QWidget):
 
         def initTitle(self, title=None):
             title_label = QLabel(title)
-            title_label.setMinimumHeight(20)
+            title_label.setMinimumHeight(18)
             title_label.setStyleSheet("border: 0px; font: bold;")
             return title_label
 

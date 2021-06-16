@@ -21,8 +21,12 @@ from Qt.QtCore import Qt as qt
 from collapsable_frame import CollapsableFrame
 
 
-def run():
-    app = QApplication(sys.argv)
+def run(*args):
+    if not QApplication.instance():
+        app = QApplication(*args)
+    else:
+        app = QApplication.instance()
+
     window = QMainWindow()
 
     widget = QWidget()
@@ -75,8 +79,9 @@ def run():
     window.show()
     window.raise_()
 
-    sys.exit(app.exec_())
+    return app.exec_()
 
 
 if __name__ == "__main__":
-    run()
+    return_code = run(sys.argv)
+    sys.exit(return_code)
