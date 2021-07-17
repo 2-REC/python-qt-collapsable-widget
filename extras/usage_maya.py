@@ -21,13 +21,19 @@ from Qt.QtCore import Qt as qt
 from collapsable_frame import CollapsableFrame
 
 
-def run(*args):
-    if not QApplication.instance():
-        app = QApplication(*args)
-    else:
-        app = QApplication.instance()
 
-    window = QMainWindow()
+def getMayaWindow():
+    top_level_widgets = QApplication.topLevelWidgets()
+    return next(
+        widget for widget in top_level_widgets
+            if widget.objectName() == "MayaWindow"
+    )
+
+
+def run():
+
+    parent = getMayaWindow()
+    window = QMainWindow(parent)
 
     widget = QWidget()
     widget.setMinimumWidth(350)
@@ -75,12 +81,8 @@ def run(*args):
 
     layout.addStretch(1)
 
+    window.activateWindow()
     window.show()
-    window.raise_()
-
-    return app.exec_()
 
 
-if __name__ == "__main__":
-    return_code = run(sys.argv)
-    sys.exit(return_code)
+run()

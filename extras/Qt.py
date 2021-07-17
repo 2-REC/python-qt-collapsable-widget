@@ -45,7 +45,7 @@ import importlib
 import json
 
 
-__version__ = "1.3.3"
+__version__ = "1.3.5"
 
 # Enable support for `from Qt import *`
 __all__ = []
@@ -1682,7 +1682,12 @@ def _log(text):
 
 
 def _warn(text):
-    sys.stderr.write("Qt.py [warning]: %s\n" % text)
+    try:
+        sys.stderr.write("Qt.py [warning]: %s\n" % text)
+    except UnicodeDecodeError:
+        import locale
+        encoding = locale.getpreferredencoding()
+        sys.stderr.write("Qt.py [warning]: %s\n" % text.decode(encoding))
 
 
 def _convert(lines):

@@ -2,7 +2,7 @@
 
 ## Source Project
 
-*A Qt collapsable widget in Python, in the spirit of the Maya 'frameLayout' command.*
+*A Qt collapsable widget in Python, in the spirit of the Autodesk Maya 'frameLayout' command.*
 
 This project is based on [PyQt Collapsable Widget](https://github.com/By0ute/pyqt-collapsible-widget) from [Caroline Beyne](https://github.com/By0ute).
 
@@ -12,7 +12,7 @@ This project is based on [PyQt Collapsable Widget](https://github.com/By0ute/pyq
 Here are 2 examples of the Collapsable Frame in action.
 The first one is in a standard Python application, the second one is inside a Maya 2020 session.
 
-(TODO: add animated GIFs)
+![standalone](images/standalone.gif) ![Maya](images/maya.gif)
 
 
 ## Changes
@@ -79,8 +79,8 @@ Qt and one of the Python bindings need to be installed on the system, and access
 In Maya: Qt and its PySide bindings are included in the installation, hence don't need to be installed separately.
 
 ### Python version
-The project is written in Python 2 (aimed and tested in Python 2.7).
-It might need some small changes in order to work in Python 3.
+The project was written in Python 2.7 (as used by Maya 2020), but should work with any version of Python post 2.7.
+The standalone code (outside of Maya) has been tested in Python 2.7.16 and 3.7.9.
 
 ### Known bugs/issues
 
