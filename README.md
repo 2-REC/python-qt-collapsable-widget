@@ -69,6 +69,7 @@ Parts of the code have been modified or replaced in order to handle the new chan
 * [extras]
     * **Qt.py**: The Qt.py file allowing to use the different Qt Python bindings
     * **usage.py**: An example file showing how to use the Collapsable Frame
+    * **usage_maya.py**: An example file showing how to use the Collapsable Frame in Maya
 
 
 ## Remarks

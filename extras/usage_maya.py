@@ -3,8 +3,6 @@
     Example usage of the Collapsable Frame widget.
 """
 
-import sys
-
 from Qt.QtWidgets import (
     QApplication,
     QMainWindow,
