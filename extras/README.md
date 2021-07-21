@@ -1,4 +1,4 @@
-# Usage example
+# Usage examples
 
 ## Usage in a Python application.
 
