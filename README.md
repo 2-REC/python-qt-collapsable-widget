@@ -10,7 +10,7 @@ This project is based on [PyQt Collapsable Widget](https://github.com/By0ute/pyq
 ## Examples
 
 Here are 2 examples of the Collapsable Frame in action.
-The first one is in a standard Python application, the second one is inside a Maya 2020 session.
+The first one is in a standard Python application, the second one is inside a Maya session.
 
 ![standalone](images/standalone.gif) ![Maya](images/maya.gif)
 
@@ -65,11 +65,16 @@ Parts of the code have been modified or replaced in order to handle the new chan
 
 ## Files
 
-* **collapsable_frame.py**: The core of the project, containing the class definition of the Collapsable Frame
+* **collapsable_frame.py**: The core of the project, containing the class definition of the Collapsable Frame widget
 * [extras]
     * **Qt.py**: The Qt.py file allowing to use the different Qt Python bindings
     * **usage.py**: An example file showing how to use the Collapsable Frame
     * **usage_maya.py**: An example file showing how to use the Collapsable Frame in Maya
+
+
+## Usage
+
+Examples on how to use the Resizable Message Box are provided in [extras](extras/usage.md)
 
 
 ## Remarks
@@ -81,7 +86,7 @@ In Maya: Qt and its PySide bindings are included in the installation, hence don'
 
 ### Python version
 The project was written in Python 2.7 (as used by Maya 2020), but should work with any version of Python post 2.7.
-The standalone code (outside of Maya) has been tested in Python 2.7.16 and 3.7.9.
+The code has been tested in Maya 2019-2022, as well as standalone in Python 2.7.16 and 3.7.9.
 
 ### Known bugs/issues
 
