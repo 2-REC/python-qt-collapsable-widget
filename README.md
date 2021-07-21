@@ -74,7 +74,7 @@ Parts of the code have been modified or replaced in order to handle the new chan
 
 ## Usage
 
-Examples on how to use the Resizable Message Box are provided in [extras](extras/usage.md)
+Examples on how to use the Resizable Message Box are provided in [extras](extras/README.md)
 
 
 ## Remarks
